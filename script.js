@@ -6,8 +6,8 @@ async function showData() {
   var flagEditDelete = 0;
   // fetching data from API only one time
   if (flagFirstTime) {
-    let response = await fetch("https://jsonplaceholder.typicode.com/todos");
-    data = await response.json();
+    data = await fetch("https://jsonplaceholder.typicode.com/todos").then(response => response.json());
+    // data = await response.json();
     console.log(data);
     flagFirstTime = false;
   }
